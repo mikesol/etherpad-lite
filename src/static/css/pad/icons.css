@@ -160,11 +160,12 @@
 .icon-spin:before {
   -webkit-animation: spinAnimation 2s infinite linear;
   animation: spinAnimation 2s infinite linear;
-  font-family: "fontawesome-etherpad";
+  /*MS comments out below*/
+  /*font-family: "fontawesome-etherpad";
   font-size: 22px;
   z-index: 150;
   width: 22px;
-  height: 22px;
+  height: 22px;*/
 }
 
 @-webkit-keyframes spinAnimation {
