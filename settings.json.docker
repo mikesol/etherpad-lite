@@ -556,7 +556,7 @@
 
   "toolbar": {
     "left": [
-      ["undo", "redo"]
+      ["epWagsPlay", "undo", "redo", "epWagsError"]
     ],
     "right": [
       ["importexport", "timeslider", "savedrevision"],
