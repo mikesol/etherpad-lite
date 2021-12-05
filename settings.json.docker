@@ -221,7 +221,7 @@
   /*
    * The default text of a pad
    */
-  "defaultPadText" : "${DEFAULT_PAD_TEXT:module Main where\n\nimport Prelude\n\nimport WAGS.Lib.Learn (Player, player)\nimport WAGS.Lib.Tidal (AFuture, tdl)\nimport WAGS.Lib.Tidal.Tidal (make, s)\n\nwag :: AFuture\nwag = make 0.8 { earth: s \"hh:0\" }\n\nmain :: Player\nmain = player (tdl wag)\n}",
+  "defaultPadText" : "${DEFAULT_PAD_TEXT:module Main where\n\nimport Prelude\n\nimport WAGS.Lib.Learn (Player, player)\nimport WAGS.Lib.Tidal (AFuture, tdl)\nimport WAGS.Lib.Tidal.Tidal (make, s)\n\nwag :: AFuture\nwag = make 0.8 { earth: s \"hh:0\" }\n\nmain :: Player\nmain = player (tdl wag)\n\n-- Welcome to Wagpad!\n-- Docs @ mikesol.github.io/sf/crash-course\n}",
 
   /*
    * Default Pad behavior.
