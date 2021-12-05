@@ -102,7 +102,7 @@
   /*
    * Name your instance!
    */
-  "title": "${TITLE:Etherpad}",
+  "title": "${TITLE:Wagpad}",
 
   /*
    * Pathname of the favicon you want to use. If null, the skin's favicon is

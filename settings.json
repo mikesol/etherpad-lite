@@ -93,7 +93,7 @@
   /*
    * Name your instance!
    */
-  "title": "Etherpad",
+  "title": "Wagpad",
 
   /*
    * Pathname of the favicon you want to use. If null, the skin's favicon is
