@@ -1,0 +1,51 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Deploy to Amazon ECS
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - wags
+
+env:
+  AWS_REGION: eu-west-1 # set this to your preferred AWS region, e.g. us-west-1
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install aws cli
+        run: npm install aws-cli
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+          AWS_DEFAULT_REGION: ${{ env.AWS_REGION }}
+        run: |
+          # Build a docker container and
+          # push it to ECR so that it can
+          # be deployed to ECS.
+          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 201242457561.dkr.ecr.eu-west-1.amazonaws.com
+          docker build -t epwags .
+          docker tag epwags:latest 201242457561.dkr.ecr.eu-west-1.amazonaws.com/epwags:latest
+          docker push 201242457561.dkr.ecr.eu-west-1.amazonaws.com/epwags:latest
