@@ -222,7 +222,7 @@
   /*
    * The default text of a pad
    */
-  "defaultPadText" : "module Main where\n\nimport Prelude\n\nimport WAGS.Lib.Learn (Player, player)\nimport WAGS.Lib.Tidal (AFuture, tdl)\nimport WAGS.Lib.Tidal.Tidal (make, s)\n\nwag :: AFuture\nwag = make 0.8 { earth: s \"hh:0\" }\n\nmain :: Player\nmain = player (tdl wag)\n\n-- Welcome to Wagpad!\n-- Press ▶ and start jamming.\n-- Docs @ mikesol.github.io/sf/crash-course\n",
+  "defaultPadText" : "bd bd <hh hh:3> [notes:5, chin*4]\n\n# @duration 1.2\n# Hi! Welcome to yap.wags.fm\n# Press ▶ and start jamming.\n# Docs @ mikesol.github.io/sf/yap\n",
 
   /*
    * Default Pad behavior.
