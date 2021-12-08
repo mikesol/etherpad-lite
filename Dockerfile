@@ -85,7 +85,7 @@ COPY --chown=etherpad:etherpad ./ ./
 # seems to confuse tools such as `npm outdated`, `npm update`, and some ESLint
 # rules.
 RUN { [ -z "${ETHERPAD_PLUGINS}" ] || \
-      npm install --no-save ${ETHERPAD_PLUGINS}; } && \
+      npm install --no-save --legacy-peer-deps ${ETHERPAD_PLUGINS}; } && \
     src/bin/installDeps.sh && \
     rm -rf ~/.npm
 
