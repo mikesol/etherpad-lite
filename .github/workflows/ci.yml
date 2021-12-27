@@ -42,8 +42,8 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
+          npm install aws
           docker build -t epwags .
           docker tag epwags:latest 201242457561.dkr.ecr.eu-west-1.amazonaws.com/epwags:latest
-          npm install aws
           aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 201242457561.dkr.ecr.eu-west-1.amazonaws.com
           docker push 201242457561.dkr.ecr.eu-west-1.amazonaws.com/epwags:latest
