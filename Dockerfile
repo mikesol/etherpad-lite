@@ -84,7 +84,9 @@ COPY --chown=etherpad:etherpad ./ ./
 # node_modules. Even if npm correctly hoists the dependencies, the hoisting
 # seems to confuse tools such as `npm outdated`, `npm update`, and some ESLint
 # rules.
-RUN { [ -z "${ETHERPAD_PLUGINS}" ] || \
+# MS add - we have to run install deps twice. No clue why...
+RUN src/bin/installDeps.sh && \
+    { [ -z "${ETHERPAD_PLUGINS}" ] || \
       npm install --no-save --legacy-peer-deps ${ETHERPAD_PLUGINS}; } && \
     src/bin/installDeps.sh && \
     rm -rf ~/.npm
