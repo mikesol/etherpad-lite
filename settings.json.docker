@@ -221,7 +221,7 @@
   /*
    * The default text of a pad
    */
-  "defaultPadText" : "${DEFAULT_PAD_TEXT:bd*2 bd hh [notes:5, chin*4]\n\n# @duration 1.2\n# Hi! Welcome to yap.wags.fm\n# To start, press the play button on the top-left of the page or Ctrl-P.\n# Docs @ mikesol.github.io/sf/yap\n}",
+  "defaultPadText" : "${DEFAULT_PAD_TEXT:bd*2 bd hh [notes:5, chin*4]\n\n# @duration 1.2\n# Hi! Welcome to yap.wags.fm\n# To start, press the play button on the top-left of the page or Ctrl-G.\n# Docs @ mikesol.github.io/sf/yap\n}",
 
   /*
    * Default Pad behavior.
