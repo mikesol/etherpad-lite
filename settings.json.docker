@@ -557,7 +557,7 @@
 
   "toolbar": {
     "left": [
-      ["epWagsPlay", "epWagsUpload", "epWagsRecord", "undo", "redo", "epWagsError"]
+      ["epWagsPlay", "epWagsUpload", "epWagsRecord", "epWagsExport", "undo", "redo", "epWagsError"]
     ],
     "right": [
       ["importexport", "timeslider", "savedrevision"],
