@@ -222,7 +222,7 @@
   /*
    * The default text of a pad
    */
-  "defaultPadText" : "${DEFAULT_PAD_TEXT:bd*2 bd hh [notes:5, chin*4]\n\n# @duration 1.2\n# Hi! Welcome to yap.wags.fm\n# To start, press the play button on the top-left of the page or Ctrl-G.\n# Docs @ mikesol.github.io/sf/yap\n}",
+  "defaultPadText" : "module Smpl where\n\nimport Prelude\nimport Type.Proxy (Proxy(..))\nimport Foreign.Object as O\nimport Data.Tuple.Nested ((/\\))\nimport WAGS.Lib.Tidal.Types (AFuture, BufferUrl(..))\nimport WAGS.Lib.Tidal.Tidal (make, s)\n\nohHi = Proxy :: _ \"\"\"\n  [hello, bd hh <notes:1 notes:2 notes:3>]\n\"\"\"\n\nwag :: AFuture\nwag =\n  make 1.1\n    { earth: s ohHi\n    , sounds\n    , title: \"h e l l o w o r l d\"\n    }\n\nsounds = O.fromFoldable [\n  \"hello\" /\\ BufferUrl \"https://freesound.org/data/previews/107/107932_1838023-hq.mp3\"\n]",
 
   /*
    * Default Pad behavior.
@@ -557,7 +557,7 @@
 
   "toolbar": {
     "left": [
-      ["epWagsPlay", "epWagsUpload", "epWagsRecord", "epWagsExport", "undo", "redo", "epWagsError"]
+      ["epWagsPlay", "epWagsUpload", "epWagsRecord", "epWagsExport", "undo", "redo", "epWagsCompiling", "epWagsError"]
     ],
     "right": [
       ["importexport", "timeslider", "savedrevision"],
